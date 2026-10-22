@@ -2,7 +2,7 @@ let totalActual = 0;
 
 
 function cargarMenu() {
-        // Implementación para cargar el menú desde la base de datos y mostrarlo en el HTML
+    // Implementación para cargar el menú desde la base de datos y mostrarlo en el HTML
     const menu = obtenerMenu();
     const contenedor = document.getElementById('menu-container');
 contenedor.innerHTML = '';
@@ -20,13 +20,10 @@ menu.forEach(function(platillo) {
 
 
 function sumarTotal(precio) {
-    /**
-     * Actualiza el total de la orden en memoria y en pantalla.
-     * 
-     * - Suma el parámetro 'precio' a la variable global 'totalActual'.
-     * - Actualiza el texto del elemento HTML con id 'total' para reflejar el nuevo valor.
-     */
-    throw new Error("Equipo: implementen sumarTotal");
+    // Implementación para sumar el precio del platillo al total actual y actualizar el HTML
+
+    totalActual += precio;
+    document.getElementById('total').textContent = totalActual.toFixed(2);
 }
 
 
