@@ -22,14 +22,8 @@ function obtenerMenu() {
 
 
 function guardarComanda(totalOrden) {
-    /**
-     * Guarda el registro de una nueva orden en localStorage.
-     * 
-     * - Obtiene la base de datos actual con localStorage.getItem y JSON.parse.
-     * - Crea un objeto nuevo: { fecha: new Date(), total: totalOrden }.
-     * - Agrega el objeto nuevo al arreglo 'comandas' usando .push().
-     * - Convierte la base de datos a string con JSON.stringify().
-     * - Guarda nuevamente usando localStorage.setItem().
-     */
-    throw new Error("Equipo: implementen guardarComanda");
+    // Implementación para guardar una nueva comanda
+    const db = JSON.parse(localStorage.getItem('restauranteDB'));
+    db.comandas.push({ fecha: new Date(), total: totalOrden });
+    localStorage.setItem('restauranteDB', JSON.stringify(db));
 }
