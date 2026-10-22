@@ -2,18 +2,20 @@ let totalActual = 0;
 
 
 function cargarMenu() {
-    /**
-     * Renderiza el menú en el HTML.
-     * 
-     * - Llama a obtenerMenu() y guarda el resultado.
-     * - Limpia el contenido de document.getElementById('menu-container').
-     * - Itera sobre el arreglo de platillos.
-     * - Por cada platillo, crea un <div> con la clase 'platillo'.
-     * - El <div> debe mostrar el nombre y el precio.
-     * - Debe asignar un evento onclick al <div> que llame a sumarTotal(precio).
-     * - Agrega el <div> al contenedor.
-     */
-    throw new Error("Equipo: implementen cargarMenu");
+        // Implementación para cargar el menú desde la base de datos y mostrarlo en el HTML
+    const menu = obtenerMenu();
+    const contenedor = document.getElementById('menu-container');
+contenedor.innerHTML = '';
+
+menu.forEach(function(platillo) {
+    const div = document.createElement('div');
+    div.className = 'platillo';
+    div.innerHTML = '<strong>' + platillo.nombre + '</strong><br>$' + platillo.precio.toFixed(2);
+    div.onclick = function() {
+        sumarTotal(platillo.precio);
+    };
+    contenedor.appendChild(div);
+});
 }
 
 
