@@ -36,10 +36,24 @@ header h1 {
  * - Eliminar el borde negro original.
  */
 .platillo {
-    border: 1px solid black; 
+    /* Se mantiene el espaciado original */
     padding: 10px;
     margin: 5px;
-    /* Implementen sus reglas aquí */
+    
+    /* Tarea 7: Diseño de la Tarjeta */
+    border: none; /* Elimina el borde negro original */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    
+    /* Efecto de transición para mayor fluidez */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.platillo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 86, 179, 0.15);
 }
 
 #resumen-orden {
